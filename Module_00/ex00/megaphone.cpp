@@ -6,12 +6,11 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 10:10:22 by vkatason          #+#    #+#             */
-/*   Updated: 2024/06/08 12:58:33 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/06/14 10:52:49 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream> // for std::cout
-#include <string> // for std::string
 
 /**
  * @brief 		The program takes a string as an argument and prints it in uppercase.
