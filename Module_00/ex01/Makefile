@@ -6,20 +6,20 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/14 10:47:31 by vkatason          #+#    #+#              #
-#    Updated: 2024/06/19 16:18:49 by vkatason         ###   ########.fr        #
+#    Updated: 2024/06/25 12:52:42 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 USER := $(shell whoami)
 CC = clang++ 
-INC = includes
-CPPFLAGS = -Wall -Werror -Wextra -I$(INC) -std=c++98
-#-fsanitize=leak
+#INC = includes
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+#-I$(INC) -g -fsanitize=leak
 CLEAN = rm -Rf
 SRC = 	main.cpp \
-		srcs/phonebook.cpp \
-		srcs/contact.cpp
+		PhoneBook.cpp \
+		Contact.cpp
 
 OBJS := $(SRC:.cpp=.o)
 

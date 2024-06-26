@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:31:43 by vkatason          #+#    #+#             */
-/*   Updated: 2024/06/19 15:45:07 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/06/25 12:59:14 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Contact
 	private:
 		std::string _firstName;
 		std::string _lastName;
-		std::string _nickName;
 		std::string _phoneNumber;
+		std::string _nickName;
 		std::string _darkestSecret;
 	
 	public:
@@ -34,18 +34,18 @@ class Contact
 		~Contact()
 		{};
 		
-		//Getters
+		//Getters functions
 		std::string getFirstName() const;
 		std::string getLastName() const;
-		std::string getNickName() const;
 		std::string getPhoneNumber() const;
+		std::string getNickName() const;
 		std::string getDarkestSecret() const;
 		
-		//Setters
+		//Setters functions
 		void setFirstName(std::string firstName);
 		void setLastName(std::string lastName);
-		void setNickName(std::string nickName);
 		void setPhoneNumber(std::string phoneNumber);
+		void setNickName(std::string nickName);
 		void setDarkestSecret(std::string darkestSecret);
 };
 
