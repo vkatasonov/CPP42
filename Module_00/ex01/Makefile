@@ -6,7 +6,7 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/14 10:47:31 by vkatason          #+#    #+#              #
-#    Updated: 2024/06/25 12:52:42 by vkatason         ###   ########.fr        #
+#    Updated: 2024/06/26 16:43:25 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,8 @@ DEFAULT	:= \033[0m
 all: $(NAME)
 
 %.o:%.cpp
-	@$(CC) -c $(CPPFLAGS) ${SRC}
-	@echo "$(GREEN)The object files were successfully compiled. $(DEFAULT)"
+	@$(CC) -c $(CPPFLAGS) $< -o $@
+	@echo "$(GREEN)The object file $@ was successfully compiled. $(DEFAULT)"
 
 $(NAME): $(OBJS)
 	@$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
