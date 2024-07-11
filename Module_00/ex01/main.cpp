@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:38:12 by vkatason          #+#    #+#             */
-/*   Updated: 2024/06/27 18:47:42 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/11 13:03:44 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,8 @@ void searchContact(PhoneBook *phoneBook)
 	total = phoneBook->getTotalContacts();
 	std::cout << GREEN "┌──────────┬──────────┬──────────┬──────────┐" RST << std::endl;
 	std::cout << GREEN "|" << std::setw(10) << std::right << "Index";
-	std::cout << GREEN "│" << std::setw(10) << std::right << "First name";
-	std::cout << GREEN "│" << std::setw(10) << std::right << "Last name";
+	std::cout << GREEN "│" << std::setw(10) << std::left << "First name";
+	std::cout << GREEN "│" << std::setw(10) << std::left << "Last name";
 	std::cout << GREEN "│" << std::setw(10) << std::right << "Nickname" << "│" RST << std::endl;
 	std::cout << GREEN "├──────────┼──────────┼──────────┼──────────┤" RST << std::endl;
     i = 0;

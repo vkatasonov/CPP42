@@ -6,13 +6,13 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/14 10:47:31 by vkatason          #+#    #+#              #
-#    Updated: 2024/07/11 11:30:19 by vkatason         ###   ########.fr        #
+#    Updated: 2024/07/11 14:42:58 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 USER := $(shell whoami)
-CC = clang++ 
+CC = c++ 
 #INC = includes
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -g -fsanitize=leak
 #-I$(INC) -g -fsanitize=leak

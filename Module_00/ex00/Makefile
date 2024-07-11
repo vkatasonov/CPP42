@@ -6,13 +6,13 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 10:10:00 by vkatason          #+#    #+#              #
-#    Updated: 2024/06/08 12:37:15 by vkatason         ###   ########.fr        #
+#    Updated: 2024/07/11 14:43:04 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 USER := $(shell whoami)
-CC = clang++ 
+CC = c++ 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 #-fsanitize=leak
 CLEAN = rm -Rf
