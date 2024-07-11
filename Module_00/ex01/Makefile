@@ -6,7 +6,7 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/14 10:47:31 by vkatason          #+#    #+#              #
-#    Updated: 2024/06/27 18:48:17 by vkatason         ###   ########.fr        #
+#    Updated: 2024/07/11 11:30:19 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ clean:
 
 fclean: clean
 	@$(CLEAN) $(NAME)
-	@echo "$(RED)Removing:$(DEFAULT) $(NAME) Program."
+	@echo "$(RED)Removing:$(DEFAULT) $(NAME) program."
 	@echo "$(RED)Cleaned up!$(DEFAULT)"
 
 re: clean fclean all
