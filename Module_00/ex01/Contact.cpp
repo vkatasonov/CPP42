@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:32:03 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/11 12:57:21 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:13:31 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Contact::~Contact()
 
 std::string Contact::getFirstName() const
 {
-        return _firstName;
+    return _firstName;
 }
 
 std::string Contact::getLastName() const 

@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:27:09 by vkatason          #+#    #+#             */
-/*   Updated: 2024/06/26 16:42:57 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/11 20:01:13 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,137 @@ void PhoneBook::setContact(Contact contact)
     if (this->_total < 8)
         this->_total++;
     this->_index = (this->_index + 1) % 8; // Takes index from 0 to 7
+}
+
+/**
+ * @brief              Function to add the contact to the PhoneBook
+ * @var contact        Contact object
+ * @var inputPrompt    Array of strings to prompt the user for input
+ * @var inputError     Array of strings to display the error message
+ * @var inputValues    Array of strings to store the input values
+ * @var inputValid     Boolean to check if the input is valid
+ * @var i              Counter to iterate through the inputPrompt and inputError arrays
+ * @var j              Counter to iterate through the phone number
+ * @var c              Character to store the phone number character 
+ * 
+ */
+void PhoneBook::addContact()
+{
+    Contact contact;
+    std::string inputPrompt[] = {"First name: ", "Last name: ", "Nickname: ", "Phone number: ", "Darkest secret: "};
+    std::string inputError[] = {"", "", "", "ERROR. PHONE NUMBER MUST CONTAIN ONLY DIGITS!", ""};
+    std::string inputValues[5]; // Array to store input values
+    bool inputValid = true;
+
+    for (int i = 0; i < 5; ++i) 
+    {
+        while (true) 
+        {
+            std::cout << BLUE << inputPrompt[i] << RST;
+            std::getline(std::cin, inputValues[i]);
+            if (inputValues[i] != "") 
+            {
+                if (i == 3) 
+                {                                               // Special validation for phone number
+                    inputValid = true;
+                    for (size_t j = 0; j < inputValues[i].length(); ++j) {
+                        char c = inputValues[i][j];
+                        if (!std::isdigit(c)) {
+                            std::cout << RED << inputError[i] << RST << std::endl;
+                            inputValid = false;
+                            break;                              // Exit the loop if a non-digit character is found
+                        }
+                    }
+                    if (!inputValid) continue;                  // If invalid, restart the loop for phone number
+                }
+                break;                                          // Break the loop if input is valid
+            }
+        }
+    }
+    // Setting the contact details after validation
+    contact.setFirstName(inputValues[0]);
+    contact.setLastName(inputValues[1]);
+    contact.setNickName(inputValues[2]);
+    contact.setPhoneNumber(inputValues[3]);
+    contact.setDarkestSecret(inputValues[4]);
+    this->setContact(contact);
+    std::cout << std::setw(45) << GREEN "┌───────────────────────────────────────────┐" RST << std::endl;
+    std::cout << std::setw(45) << GREEN "|          Contact had been added!          |" RST << std::endl;
+    std::cout << std::setw(45) << GREEN "└───────────────────────────────────────────┘" RST << std::endl;
+}
+
+/**
+ * @brief               Function to cut the string
+ *                      to make it no longer than 10 
+ *                      characters long
+ * 
+ * @param str           String to cut
+ * @return std::string  Truncated string
+ */
+std::string cutString(std::string str) {
+    return str.size() >= 10 ? str.substr(0, 9) + "." : str;
+}
+
+/**
+ * @brief               Function to search the contact
+ * 
+ * @param phoneBook     PhoneBook object
+ * @var index           Index of the contact
+ * @var total           Total number of contacts
+ * @var i               Counter to iterate through the contacts
+ * @var contact         Contact object
+ * @var tmp             Temporary contact object
+ *                      to store the contact information that
+ *                      will be displayed
+ */
+void PhoneBook::searchContact() 
+{
+    int index;
+    int total;
+    int i;
+    
+    total = this->getTotalContacts();
+    std::cout << GREEN "┌──────────┬──────────┬──────────┬──────────┐" RST << std::endl;
+    std::cout << GREEN "|" << std::setw(10) << std::right << "Index";
+    std::cout << GREEN "│" << std::setw(10) << std::right << "First name";
+    std::cout << GREEN "│" << std::setw(10) << std::right << "Last name";
+    std::cout << GREEN "│" << std::setw(10) << std::right << "Nickname" << "│" RST << std::endl;
+    std::cout << GREEN "├──────────┼──────────┼──────────┼──────────┤" RST << std::endl;
+    i = 0;
+    while (i < this->getTotalContacts())
+    {
+        Contact contact;
+        contact = this->getContact(i);
+        std::cout << GREEN "|" RST << std::setw(10) << i + 1;
+        std::cout << GREEN "|" RST << std::setw(10) << cutString(contact.getFirstName());
+        std::cout << GREEN "|" RST << std::setw(10) << cutString(contact.getLastName());
+        std::cout << GREEN "|" RST << std::setw(10) << cutString(contact.getNickName()) << GREEN "|" RST << std::endl;
+        i++;
+    }
+    std::cout << GREEN "└──────────┴──────────┴──────────┴──────────┘" RST << std::endl;
+    if (total > 0) 
+    {
+        std::cout << GREEN "Please, enter the index of the contact:" RST;
+        while (!(std::cin >> index) || index > total || index < 1) 
+        {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << RED "ERROR. ENTER VALID INDEX (1 TO " << total << "): " RST;
+        }
+        index--;
+        Contact tmp;
+        tmp = this->getContact(index);
+        std::cout << std::endl << BLUE "Contact information:" RST << std::endl;
+        std::cout << YELLOW "First name: \t\t" RST << tmp.getFirstName() << std::endl;
+		std::cout << YELLOW "Last name: \t\t" RST << tmp.getLastName() << std::endl;
+		std::cout << YELLOW "Nickname: \t\t" RST << tmp.getNickName() << std::endl;
+		std::cout << YELLOW "Phone number: \t\t" RST << tmp.getPhoneNumber() << std::endl;
+		std::cout << RED "Darkest secret\t\t" RST << tmp.getDarkestSecret() << std::endl;
+        std::cout << std::endl;
+    } 
+    else 
+    {
+        std::cout << RED "Phone Book is empty!" << std::endl;
+    }
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the input buffer
 }
