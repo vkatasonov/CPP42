@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:38:12 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/11 13:03:44 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:48:49 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <limits>
 
 /*
-** ASCII colors escape sequences for printf
+** ASCII colors escape sequences for cout
 ** Usage:
 **      ft_printf(RED "Red bold text" RST);
 **		ft_printf(B "Bold text goes here" RST);
