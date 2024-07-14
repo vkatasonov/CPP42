@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:30:23 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/11 18:43:46 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/14 18:29:56 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ public:
 	// Empty destructor
 	~PhoneBook();
 
-	void addContact();						// Add contact
-	void searchContact();					// Search contact
+	bool addContact();						// Add contact
+	bool searchContact();					// Search contact
 };
 
 #endif

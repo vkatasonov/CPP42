@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:27:09 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/11 20:01:13 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/14 18:47:27 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,23 @@ void PhoneBook::setContact(Contact contact)
 }
 
 /**
- * @brief              Function to add the contact to the PhoneBook
- * @var contact        Contact object
- * @var inputPrompt    Array of strings to prompt the user for input
- * @var inputError     Array of strings to display the error message
- * @var inputValues    Array of strings to store the input values
- * @var inputValid     Boolean to check if the input is valid
- * @var i              Counter to iterate through the inputPrompt and inputError arrays
- * @var j              Counter to iterate through the phone number
- * @var c              Character to store the phone number character 
+ * @brief               Function to add the contact
+ * @var contact         Contact object
+ * @var inputPrompt     Array of input prompts
+ * @var inputError      Array of input errors
+ * @var inputValues     Array of input values
+ * @var inputValid      Boolean variable to check 
+ *                      if the input is valid when 
+ *                      entering the phone number
+ * @var i               Counter to iterate through 
+ *                      the input prompts
  * 
+ * @return true         If the contact is successfully added
+ * @return false        If the user terminates the program
+ *                      by pressing the Ctrl+D key combination
+ *                      (checking EOF character)
  */
-void PhoneBook::addContact()
+bool PhoneBook::addContact()
 {
     Contact contact;
     std::string inputPrompt[] = {"First name: ", "Last name: ", "Nickname: ", "Phone number: ", "Darkest secret: "};
@@ -96,6 +101,12 @@ void PhoneBook::addContact()
         {
             std::cout << BLUE << inputPrompt[i] << RST;
             std::getline(std::cin, inputValues[i]);
+            if (std::cin.eof()) 
+            {
+                std::cout << RED "\nERROR: Terminated by user:" << std::endl;
+                std::cout << YELLOW "EOF reached or CTRL+D pressed" RST << std::endl;
+                return false;
+            }
             if (inputValues[i] != "") 
             {
                 if (i == 3) 
@@ -125,6 +136,7 @@ void PhoneBook::addContact()
     std::cout << std::setw(45) << GREEN "┌───────────────────────────────────────────┐" RST << std::endl;
     std::cout << std::setw(45) << GREEN "|          Contact had been added!          |" RST << std::endl;
     std::cout << std::setw(45) << GREEN "└───────────────────────────────────────────┘" RST << std::endl;
+    return true;
 }
 
 /**
@@ -140,18 +152,19 @@ std::string cutString(std::string str) {
 }
 
 /**
- * @brief               Function to search the contact
+ * @brief            Function to search for the contact
+ * @var index        Index of the contact
+ * @var total        Total number of contacts
+ * @var i            Counter to iterate through the contacts
+ * @var contact      Contact object
  * 
- * @param phoneBook     PhoneBook object
- * @var index           Index of the contact
- * @var total           Total number of contacts
- * @var i               Counter to iterate through the contacts
- * @var contact         Contact object
- * @var tmp             Temporary contact object
- *                      to store the contact information that
- *                      will be displayed
+ * @return true      If the search is successful and if 
+ *                   during the search the user does not
+ *                   terminate the program by pressing
+ *                   the Ctrl+D key combination 
+ *                   (checking EOF character)
  */
-void PhoneBook::searchContact() 
+bool PhoneBook::searchContact() 
 {
     int index;
     int total;
@@ -181,6 +194,12 @@ void PhoneBook::searchContact()
         std::cout << GREEN "Please, enter the index of the contact:" RST;
         while (!(std::cin >> index) || index > total || index < 1) 
         {
+            if (std::cin.eof()) 
+            {
+                std::cout << RED "\nERROR: Terminated by user:" << std::endl;
+                std::cout << YELLOW "EOF reached or CTRL+D pressed" RST << std::endl;
+                return false;
+            }
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << RED "ERROR. ENTER VALID INDEX (1 TO " << total << "): " RST;
@@ -199,6 +218,8 @@ void PhoneBook::searchContact()
     else 
     {
         std::cout << RED "Phone Book is empty!" << std::endl;
+        return true;
     }
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the input buffer
+    return true;
 }
