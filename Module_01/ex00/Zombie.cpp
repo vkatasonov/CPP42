@@ -18,10 +18,10 @@ Zombie::Zombie( std::string name ) : _name(name)
 }
 Zombie::~Zombie()
 {
-    std::cout << BLUE << std::setw(20) << this->_name + ":" << RED "is destroyed" RST<< std::endl;
+    std::cout << WHITE << BG_RED << std::setw(25) << " " + this->_name + ":" << "is destroyed " RST<< std::endl;
 }
 
 void Zombie::announce( void ) const
 {
-    std::cout << BLUE << std::setw(20) << std::left << this->_name + ":" << YELLOW "BraiiiiiiinnnzzzZ..." RST << std::endl;
+    std::cout << WHITE << BG_GREEN << std::setw(25) << std::left << " " + this->_name + ":" << "BraiiiiiiinnnzzzZ... " RST << std::endl;
 }
