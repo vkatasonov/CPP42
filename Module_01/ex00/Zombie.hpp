@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 12:47:41 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/18 17:05:41 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/19 12:20:54 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@
 
 class Zombie
 {
-
+// constructor and destructor
 public:
     Zombie( std::string zombieName );
     ~Zombie();
-    
+     
     void announce( void ) const;
 
 private:

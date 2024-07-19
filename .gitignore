@@ -34,4 +34,7 @@ Temporary Items
 ### VS Code files ###
 .vscode
 .yml
+
+### Object files ###
+*.o
 # End 
