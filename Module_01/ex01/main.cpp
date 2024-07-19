@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 12:32:22 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/19 12:49:00 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/19 13:05:12 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
  * @brief			Main function that creates 
  * 					a Zombie horde gives them names,
  * 					makes them announce and then 
- * 					deletes the horde.        
+ * 					deletes the horde.  
+ * @note			The app uses N as a constant
+ * 					to define the number of Zombies
+ * 					(as recomended in the 42 videos).      
  * 
  * @return int 
  */
