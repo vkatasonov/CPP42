@@ -6,13 +6,14 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 15:02:28 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/23 17:15:00 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:04:41 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANA_HPP
 # define HUMANA_HPP
 #include "Weapon.hpp"
+
 class HumanA
 {
     private:

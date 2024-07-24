@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 10:51:00 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/24 12:59:25 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:10:18 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,26 @@
 #define BG_CYAN "\033[46m"    /* Background Cyan */
 #define BG_WHITE "\033[47m"   /* Background White */
 
+
+/**
+ * @brief                   Function that replaces one 
+ *                          string to another in the file
+ * @var filename            Name of the file
+ * @var s1                  String to replace
+ * @var s2                  String to replace with
+ * 
+ * @note                    The function reads the file line by line
+ *                          and searches for the string to replace.
+ *                          If the string is found, the function erases
+ *                          the string to replace from the line
+ *                          and inserts the string to replace with 
+ *                          (as soon as std::string::replace() function
+ *                          is not allowed).
+ * 
+ * @var pos                 Stores the position of the string to replace
+ * @var line                Serves to store the line read from the file
+ * @param argv              Command line arguments
+ */
 void replaceString(char **argv)
 {
     std::string const filename = argv[1];

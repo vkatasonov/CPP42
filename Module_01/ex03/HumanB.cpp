@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 15:01:58 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/23 17:08:27 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:00:33 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  *              is set or not 
  */
 HumanB::HumanB(std::string name)
-	: _name(name), _weapon(nullptr)
+	: _name(name), _weapon(NULL)
 {
 }
 // Destructor

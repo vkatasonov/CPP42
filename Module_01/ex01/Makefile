@@ -6,13 +6,13 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/18 21:10:51 by vkatason          #+#    #+#              #
-#    Updated: 2024/07/19 13:40:52 by vkatason         ###   ########.fr        #
+#    Updated: 2024/07/24 15:47:19 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ZombieHorde
 USER := $(shell whoami)
-CC = c++ 
+CC = c++
 #INC = includes
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 #-I$(INC) -g -fsanitize=leak

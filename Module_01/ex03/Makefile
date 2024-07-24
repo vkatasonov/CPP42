@@ -6,7 +6,7 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/19 15:00:07 by vkatason          #+#    #+#              #
-#    Updated: 2024/07/23 16:54:46 by vkatason         ###   ########.fr        #
+#    Updated: 2024/07/24 16:03:46 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CC = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 #-I$(INC) -g -fsanitize=leak
 CLEAN = rm -Rf
-SRC = 	Weapon.cpp \
+SRC = 	main.cpp \
+		Weapon.cpp \
 		HumanA.cpp \
 		HumanB.cpp
 

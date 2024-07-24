@@ -6,12 +6,9 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 11:34:37 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/20 19:04:47 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:13:26 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// This is a personal academic project. Dear PVS-Studio, please check it.
-// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
 #include "Zombie.hpp"
 
