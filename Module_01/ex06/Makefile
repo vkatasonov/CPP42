@@ -6,11 +6,11 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/21 10:25:43 by vkatason          #+#    #+#              #
-#    Updated: 2024/07/24 14:05:02 by vkatason         ###   ########.fr        #
+#    Updated: 2024/07/29 17:18:21 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Harl
+NAME = harlFilter
 USER := $(shell whoami)
 CC = c++ 
 #INC = includes

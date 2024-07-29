@@ -6,11 +6,25 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 10:27:42 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/29 12:40:27 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/29 17:22:17 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+/**
+ * @brief           Main function to test Harl Class 
+ *                  with different levels of complaints
+ *                  and implementation of switch case
+ * 
+ * @note            We don't have the break statement 
+ *                  in the switch case as soon as subject
+ *                  asks Harl to keep complaining
+ * 
+ * @param argc      argument count 
+ * @param argv      argument vector
+ * @return int      0
+ */
 
 int main(int argc, char **argv)
 {
@@ -32,17 +46,14 @@ int main(int argc, char **argv)
             std::cout << BG_BLUE << "[ " << levels[0] << " ]" << RST << std::endl;
             harl.complaints(levels[0]);
             std::cout << std::endl;
-            break;
         case 1:
             std::cout << BG_GREEN << "[ " << levels[1] << " ]" << RST << std::endl;
             harl.complaints(levels[1]);
             std::cout << std::endl;
-            break;
         case 2:
             std::cout << BG_YELLOW << "[ " << levels[2] << " ]" << RST << std::endl;
             harl.complaints(levels[2]);
             std::cout << std::endl;
-            break;
         case 3:
             std::cout << BG_RED << "[ " << levels[3] << " ]" << RST << std::endl;
             harl.complaints(levels[3]);

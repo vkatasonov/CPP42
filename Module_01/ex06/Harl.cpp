@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 10:29:16 by vkatason          #+#    #+#             */
-/*   Updated: 2024/07/29 12:38:12 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/07/29 17:24:10 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ void Harl::_error(void)
 	std::cout << WHITE << BG_RED << "This is unacceptable! I want to speak to the manager. " << RST << std::endl;
 }
 
+/**
+ * @brief 				Function to call different complaints function
+ * 						depending on the passed parameter (level of complaint)		
+ * 
+ * @param level 		Level of complaint (passed as a string to the function)		
+ * 
+ */
 void Harl::complaints(std::string level)
 {
 	std::string levels[4] = {
