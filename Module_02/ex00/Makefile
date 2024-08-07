@@ -6,11 +6,11 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/20 18:25:44 by vkatason          #+#    #+#              #
-#    Updated: 2024/07/29 18:28:14 by vkatason         ###   ########.fr        #
+#    Updated: 2024/08/07 03:15:37 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = Fixed
 USER := $(shell whoami)
 CC = c++ 
 #INC = includes
@@ -18,7 +18,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 #-I$(INC) -g -fsanitize=leak
 CLEAN = rm -Rf
 SRC = 	main.cpp \
-		Harl.cpp \
+		Fixed.cpp
 
 OBJS := $(SRC:.cpp=.o)
 
