@@ -6,12 +6,11 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 18:27:41 by vkatason          #+#    #+#             */
-/*   Updated: 2024/08/07 17:41:38 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/08/07 20:32:11 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iomanip>
 
 int	main(void)
 {

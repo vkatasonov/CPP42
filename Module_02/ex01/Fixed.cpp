@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 18:27:06 by vkatason          #+#    #+#             */
-/*   Updated: 2024/08/07 14:32:06 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:35:50 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int Fixed::toInt(void) const
 
 float Fixed::toFloat(void) const
 {
-	return ((float)this->_raw_bits / (1 << _bits));
+	return ((float)this->_raw_bits / (1 << _bits)); // 1 << _bits is equal to 2^_bits
 }
 
 std::ostream &operator<<(std::ostream &o, const Fixed &fixed)
