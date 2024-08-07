@@ -37,4 +37,8 @@ Temporary Items
 
 ### Object files ###
 *.o
+
+### PDFs
+*.pdf
+
 # End 
