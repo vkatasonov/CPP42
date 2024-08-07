@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 21:42:42 by vkatason          #+#    #+#             */
-/*   Updated: 2024/08/08 00:22:44 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/08/08 00:35:12 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ ClapTrap::~ClapTrap()
 	std::cout << RED << "ClapTrap destructor called for " << this->_name << RST << std::endl;
 }
 
+/* Getters to use in the table of tournament*/
+
 std::string ClapTrap::getName() const
 {
     return (this->_name);
@@ -77,7 +79,7 @@ void ClapTrap::attack(std::string const &target)
     }
     else if (this->_health == 0)
     {
-        std::cout << BG_BLACK << " 🪦 ClapTrap " << this->_name << " is dead! Let him Rest In Peace! " << RST << std::endl;
+        std::cout << BG_BLACK << " 🪦 ClapTrap " << this->_name << " is dead and can't attack! Let him Rest In Peace! " << RST << std::endl;
     }
     else
     {
@@ -91,7 +93,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << RED << " ☠️ ClapTrap " << this->_name << " is dead! You can't damage dead body!" << RST << std::endl;
 	else if (amount >= this->_health)
 	{
-		std::cout << RED << " ☠️ ClapTrap " << " takes " << this->_health << " damage points and dies! RIP!" << RST << std::endl;
+		std::cout << RED << " ☠️ ClapTrap " << this->_name << " takes " << this->_health << " damage points and dies! RIP!" << RST << std::endl;
 		this->_health = 0;
         this->_energy = 0;
 	}
