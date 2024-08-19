@@ -6,11 +6,11 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/25 22:45:59 by vkatason          #+#    #+#              #
-#    Updated: 2024/08/12 19:10:34 by vkatason         ###   ########.fr        #
+#    Updated: 2024/08/19 15:19:46 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Polymorphism
+NAME = Animals
 USER := $(shell whoami)
 CC = c++ 
 #INC = includes
@@ -21,6 +21,8 @@ SRC = 	main.cpp \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 
 OBJS := $(SRC:.cpp=.o)
 

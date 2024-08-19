@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:59:35 by vkatason          #+#    #+#             */
-/*   Updated: 2024/08/12 20:17:29 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/08/19 15:29:16 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal() : _type("Animal")
 {
-    std::cout << GREEN<< "Undefined animal constructor called" << std::endl;
+    std::cout << GREEN<< "Default animal constructor called" << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type)
@@ -44,7 +44,7 @@ Animal::~Animal()
 
 void Animal::makeSound() const
 {
-    std::cout << "Animal sound" << std::endl;
+    std::cout << BLUE << "Animal sound" << RST << std::endl;
 }
 
 std::string Animal::getType() const
