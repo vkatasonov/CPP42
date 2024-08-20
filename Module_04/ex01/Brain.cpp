@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 16:15:24 by vkatason          #+#    #+#             */
-/*   Updated: 2024/08/19 17:59:49 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/08/20 12:58:45 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
  * 
  * @note    The constructor initializes the Brain with 100 generic ideas
  *          that the dog or cat might have.
- * @note    genericIdeas[rand() % (sizeof(genericIdeas) / sizeof(std::string))]
- *          is used to randomly select an idea from the genericIdeas array.
- *          The array is of size 100, so the modulo operator is used to ensure
- *          that the random number is within the bounds of the array. 
+ * @note    genericIdeas[(std::rand() % genericIdeas->size())] is used to
+ *          randomly select an idea from the genericIdeas array. 
  */
 Brain::Brain()
 {
