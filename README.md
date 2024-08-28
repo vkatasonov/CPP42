@@ -1,6 +1,6 @@
 # Piscine CPP 42
 
-This repository contains solutions to the projects from the Piscine CPP at 42 school. 
+This repository contains solutions to projects of 42 school CPP Piscine. 
 The Piscine CPP is an intensive C++ learning program focused on developing skills in object-oriented programming and advanced C++ concepts.
 
 ## Usage
