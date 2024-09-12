@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 13:40:13 by vkatason          #+#    #+#             */
-/*   Updated: 2024/09/11 13:49:00 by vkatason         ###   ########.fr       */
+/*   Created: 2024/09/12 18:32:05 by vkatason          #+#    #+#             */
+/*   Updated: 2024/09/12 19:54:57 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Scalar.hpp"
 
-ScalarConverter::ScalarConverter(std::string &str) : _str(str)
+int main(int argc, char **argv)
 {
-    // Check if the string is empty
-    if (str.empty())
-        throw ScalarConverter::InalidInputException();
-    // Handle the case of a char
-    else if (str.size() == 1)
-    {
-        
-    }
+	if (argc == 2)
+	{
+		try
+		{
+			Scalar scalar(argv[1]);
+			std::cout << scalar;
+		}
+		catch (const std::exception& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	else
+		std::cerr << RED << "Usage: ./convert <value>" << RST << std::endl;
 }

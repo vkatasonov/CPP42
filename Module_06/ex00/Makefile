@@ -6,11 +6,11 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/25 22:45:59 by vkatason          #+#    #+#              #
-#    Updated: 2024/09/11 12:40:33 by vkatason         ###   ########.fr        #
+#    Updated: 2024/09/12 20:06:58 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Forms
+NAME = convert
 USER := $(shell whoami)
 CC = c++ 
 #INC = includes
@@ -18,7 +18,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 #-I$(INC) -g -fsanitize=leak
 CLEAN = rm -Rf
 SRC = 	main.cpp \
-		ScalarConterter.cpp \
+		Scalar.cpp
 
 OBJS := $(SRC:.cpp=.o)
 
@@ -39,19 +39,19 @@ all: $(NAME)
 
 %.o:%.cpp
 	@$(CC) -c $(CPPFLAGS) $< -o $@
-	@echo "$(GREEN)The object file $@ was successfully compiled. $(RST)"
+# @echo "$(GREEN)The object file $@ was successfully compiled. $(RST)"
 
 $(NAME): $(OBJS)
 	@$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
-	@echo "$(GREEN)The app $(NAME) was successfully compiled. $(RST)"
+	@echo "$(GREEN)The $(RST)$(BLUE)$(NAME)$(RST)$(GREEN) app was successfully compiled. $(RST)"
 
 clean:
 	@$(CLEAN) $(OBJS)
-	@echo "$(RED)Removing:$(RST) all objects files of $(NAME) app."
+	@echo "$(RED)Removing:$(RST) $(BLUE)$(NAME)$(RST) app object files." 
 
 fclean: clean
 	@$(CLEAN) $(NAME)
-	@echo "$(RED)Removing:$(RST) $(NAME) app."
+	@echo "$(RED)Removing:$(RST) $(BLUE)$(NAME)$(RST) app."
 	@echo "$(RED)Cleaned up!$(RST)"
 
 re: clean fclean all
