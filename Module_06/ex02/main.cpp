@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:41:43 by vkatason          #+#    #+#             */
-/*   Updated: 2024/09/13 18:05:25 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/09/13 18:37:14 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void identify(Base* p)
 	else if (dynamic_cast<C*>(p))
 		std::cout << YELLOW << "C type object" << RST << std::endl;
 	else
-		std::cerr << "bad cast" << std::endl;
+		std::cerr << RED << "bad cast" << RST << std::endl;
 
 }
 
