@@ -6,11 +6,11 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/25 22:45:59 by vkatason          #+#    #+#              #
-#    Updated: 2024/09/15 18:59:27 by vkatason         ###   ########.fr        #
+#    Updated: 2024/09/16 15:02:58 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Swap
+NAME = Whatever
 USER := $(shell whoami)
 CC = c++ 
 #INC = includes
