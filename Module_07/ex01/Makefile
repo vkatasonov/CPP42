@@ -6,11 +6,11 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/25 22:45:59 by vkatason          #+#    #+#              #
-#    Updated: 2024/09/13 18:03:51 by vkatason         ###   ########.fr        #
+#    Updated: 2024/09/16 15:32:32 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Identity
+NAME = Iter
 USER := $(shell whoami)
 CC = c++ 
 #INC = includes
