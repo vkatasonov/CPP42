@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 18:59:09 by vkatason          #+#    #+#             */
-/*   Updated: 2024/08/19 17:09:54 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:03:06 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ Cat::Cat(const Cat &copy) : Animal(copy)
 Cat &Cat::operator=(const Cat &rhs)
 {
     if (this != &rhs) {
+        delete rhs._brain;
         this->_type = rhs._type;
-        delete this->_brain;
-        this->_brain = new Brain(*rhs._brain);
+        this->_brain = new Brain(*rhs._brain);\
     }
     return (*this);
 }

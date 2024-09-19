@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 18:58:32 by vkatason          #+#    #+#             */
-/*   Updated: 2024/08/19 17:10:36 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:03:29 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Dog &Dog::operator=(const Dog &rhs)
 {
     if (this != &rhs) {
         this->_type = rhs._type;
-        delete this->brain;
+        delete this->_brain;
         this->_brain = new Brain(*rhs._brain);
     }
     return (*this);
