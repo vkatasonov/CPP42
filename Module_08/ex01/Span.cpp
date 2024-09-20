@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.ccp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 16:10:48 by vkatason          #+#    #+#             */
-/*   Updated: 2024/09/19 16:58:36 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:46:53 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,14 @@ unsigned int Span::longestSpan() const
 	return (max_elem - min_elem);
 }
 
-
+void Span::print() const
+{
+	std::cout << YELLOW << "Size: " << RST << this->_size << std::endl;
+	std::cout << YELLOW << "Vector: " << RST;
+	for (std::vector<int>::const_iterator it = this->_vec.begin();
+		it != this->_vec.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+}

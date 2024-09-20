@@ -6,7 +6,7 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/25 22:45:59 by vkatason          #+#    #+#              #
-#    Updated: 2024/09/19 17:00:36 by vkatason         ###   ########.fr        #
+#    Updated: 2024/09/20 11:40:04 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 #-I$(INC) -g -fsanitize=leak
 CLEAN = rm -Rf
 SRC = 	main.cpp \
-		Span.cpp
+		Span.cpp \
 
 OBJS := $(SRC:.cpp=.o)
 
