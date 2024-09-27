@@ -6,7 +6,7 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/25 22:45:59 by vkatason          #+#    #+#              #
-#    Updated: 2024/09/26 11:31:20 by vkatason         ###   ########.fr        #
+#    Updated: 2024/09/27 13:59:30 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,11 @@ INC = "./inc"
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -I$(INC) 
 #-g -fsanitize=leak
 CLEAN = rm -Rf
-SRC = 	main.cpp \
-		BitcoinExchange.cpp \
-SRC += 	$(addprefix src/, $(SRC))
+SRC_FILES = main.cpp \
+            BitcoinExchange.cpp
+SRCS = $(addprefix src/, $(SRC_FILES))
 
-OBJS := $(SRC:.cpp=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 #######COLORS#######
 
@@ -38,12 +38,12 @@ RST		:= \033[0m
 
 all: $(NAME)
 
-%.o: %.cpp
+src/%.o: src/%.cpp
 	@$(CC) -c $(CPPFLAGS) $< -o $@
 # @echo "$(GREEN)The object file $@ was successfully compiled. $(RST)"
 
 $(NAME): $(OBJS)
-	@$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
+	@$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 	@echo "$(GREEN)The $(RST)$(BLUE)$(NAME)$(RST)$(GREEN) app was successfully compiled. $(RST)"
 
 clean:
