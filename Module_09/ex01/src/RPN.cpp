@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 10:53:06 by vkatason          #+#    #+#             */
-/*   Updated: 2024/09/30 11:31:19 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:59:09 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ void RPN::returnResult()
 {
 	if (_numberStack.empty() || _numberStack.size() > 1)
 	{
-		std::cerr << RED << "Error: Coudn't calculate result" << std::endl;
-		std::cerr << YELLOW << "Please check the input. Usage: ./RPN <\"7 7 * 7 -\">" << RST << std::endl;
+		std::cerr << RED << "Error: Coudn't calculate result. Check number of operands" << std::endl;
+		std::cerr << YELLOW << "Please check the input. Usage: ./RPN <\"arguments\">" << RST << std::endl;
 		return ;
 	}
-	std::cout << _numberStack.top() << std::endl;
+	std::cout << BLUE << _numberStack.top() << RST << std::endl;
 }

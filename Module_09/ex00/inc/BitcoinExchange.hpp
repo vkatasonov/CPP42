@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 10:37:53 by vkatason          #+#    #+#             */
-/*   Updated: 2024/09/30 10:48:29 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:16:55 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <time.h>
 #include <iomanip>
 #include <exception>
+#include <algorithm>
 
 
 #define DATAFILE "data.csv"

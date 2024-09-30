@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 10:37:40 by vkatason          #+#    #+#             */
-/*   Updated: 2024/09/27 13:11:57 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:34:49 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,29 @@ static bool isValidDate(const std::string &date) {
       return false;
     }
   }
+
+  int year = atoi(date.substr(0, 4).c_str());
+  int month = atoi(date.substr(5, 2).c_str());
+  int day = atoi(date.substr(8, 2).c_str());
+  
+  //check if the month is valid (from 1 o 12)
+  if (month < 1 || month > 12) {
+    return false;
+  }
+  
+  static const int daysInMonth[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+  // Check for leap year
+  if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))) {
+    if (day < 1 || day > 29) {
+      return false;
+    }
+  } else {
+    if (day < 1 || day > daysInMonth[month - 1]) {
+      return false;
+    }
+  }
+  
   return true;
 }
 
@@ -55,7 +78,7 @@ static void isValidDouble(const std::string &value) {
       continue;
     }
     if (!isdigit(value[i]) && value[0] != '-') {
-      throw std::runtime_error(RED "Error: + bad input => " RST + value);
+      throw std::runtime_error(RED "Error: bad input => " RST + value);
     }
   }
 
@@ -91,16 +114,26 @@ int main(int argc, char **argv) {
       {
         std::string line;
         while (getline(file, line)) {
+          // Check if the line contains exactly one '|' character
+          if (std::count(line.begin(), line.end(), '|') != 1) {
+            std::cout << RED << "Error: bad input => " << RST << line << std::endl;
+            continue;
+          }
+
           std::stringstream ss(line);
           std::string date, value;
           std::getline(ss, date, '|');
           if (isValidDate(date) == false) {
-            std::cout << RED << "Error: bad input => " << RST << date << std::endl;
+            std::cout << RED << "Error: bad input => " << RST << line << std::endl;
             continue;
           }
           date.erase(date.size() - 1);
           std::getline(ss, value, '|');
           value.erase(0, 1);
+          if (value.empty()) {
+            std::cout << RED << "Error: bad input => " << RST << line << std::endl;
+            continue;
+          }
           try {
             isValidDouble(value);  // throw if invalid
           } catch (std::exception &e) {
