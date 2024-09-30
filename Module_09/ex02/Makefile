@@ -6,19 +6,19 @@
 #    By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/25 22:45:59 by vkatason          #+#    #+#              #
-#    Updated: 2024/09/30 10:52:35 by vkatason         ###   ########.fr        #
+#    Updated: 2024/09/30 11:53:24 by vkatason         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = btc
+NAME = PmergeMe
 USER := $(shell whoami)
 CC = c++ 
 INC = "./inc"
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -I$(INC) -pedantic 
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -I$(INC) -pedantic
 #-g -fsanitize=leak
 CLEAN = rm -Rf
 SRC_FILES = main.cpp \
-            BitcoinExchange.cpp
+            PmergeMe.cpp
 SRCS = $(addprefix src/, $(SRC_FILES))
 
 OBJS = $(SRCS:.cpp=.o)
