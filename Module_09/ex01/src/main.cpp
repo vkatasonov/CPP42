@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 10:53:16 by vkatason          #+#    #+#             */
-/*   Updated: 2024/10/04 16:13:57 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:35:18 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ int main(int argc, char **argv)
     }
     else
     {
-        std::cout << "Error: Invalid number of arguments." << std::endl;
-        std::cout << "Usage: ./program \"<expression>\"" << std::endl;
+        std::cout << RED << "Error: Invalid number of arguments." << RST << std::endl;
+        std::cout << YELLOW << "Usage: ./program \"<expression>\"" << RST << std::endl;
         return EXIT_FAILURE;
     }
     return EXIT_SUCCESS;
