@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 10:53:06 by vkatason          #+#    #+#             */
-/*   Updated: 2024/09/30 17:59:09 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:18:07 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ void RPN::calculate(Operation operation)
 	double	num1;
 	double	num2;
 
+	if (_numberStack.size() < 2)
+	{
+		std::cerr << RED << "Error: Not enough operands for operation" << std::endl;
+		exit (1);
+	}
 	num1 = _numberStack.top();
 	_numberStack.pop();
 	num2 = _numberStack.top();
@@ -55,6 +60,11 @@ void RPN::calculate(Operation operation)
 		_numberStack.push(num2 * num1);
 		break ;
 	case DIVIDE:
+		if (num1 == 0)
+		{
+			std::cerr << RED << "Error: Division by zero" << std::endl;
+			exit (1);
+		}
 		_numberStack.push(num2 / num1);
 		break ;
 	}

@@ -6,7 +6,7 @@
 /*   By: vkatason <vkatason@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 10:52:43 by vkatason          #+#    #+#             */
-/*   Updated: 2024/09/30 11:32:33 by vkatason         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:03:58 by vkatason         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include <iostream>
 #include <stack>
 #include <cstdlib>
+#include <sstream>
+#include <string>
+#include <cctype>
+#include <iostream>
 
 enum	Operation
 {
